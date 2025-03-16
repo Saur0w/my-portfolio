@@ -1,0 +1,33 @@
+.menu{
+  height: 100vh;
+  background-color: rgb(41, 41, 41);
+  position: fixed;
+  right: 0;
+  top: 0;
+  color: white;
+
+  .body{
+      box-sizing: border-box;
+      height: 100%;
+      padding: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .nav{
+          display: flex;
+          flex-direction: column;
+          font-size: 56px;
+          gap: 12px;
+          margin-top: 80px;
+
+
+          a{
+              text-decoration: none;
+              color: white;
+              font-weight: 300;
+          }
+          
+      }
+  }
+}

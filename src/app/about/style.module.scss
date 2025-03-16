@@ -1,0 +1,125 @@
+// style.module.scss
+$primary-color: #141516;
+$accent-color: #6e6e73;
+$bg-color: #f5f5f7;
+$text-color: #141516;
+$secondary-text: #252627;
+$border-color: rgba(255, 255, 255, 0.1);
+$transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+.aboutSection {
+  padding: 5rem 2rem;
+  background-color: $bg-color;
+  color: $text-color;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: $primary-color;
+    letter-spacing: -1px;
+  }
+
+  .text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: $secondary-text;
+
+    .highlight {
+      color: $accent-color;
+      font-weight: 500;
+    }
+
+    .blue {
+      color: $accent-color;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+
+    .bold {
+      font-weight: 600;
+      color: $primary-color;
+    }
+  }
+
+  .subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 3rem 0 2rem;
+    color: $primary-color;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      padding: 2rem;
+      border: 1px solid $border-color;
+      transition: $transition;
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: $accent-color;
+      }
+
+      h4 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: $primary-color;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $secondary-text;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 4rem 1.5rem;
+
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 3rem 1rem;
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+    }
+
+    .services {
+      grid-template-columns: 1fr;
+    }
+  }
+}

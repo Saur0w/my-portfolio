@@ -1,0 +1,102 @@
+.landing {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+
+  .heading {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+    transition: opacity 0.5s ease-in-out;
+
+    .name {
+      color: #6e6e73;
+    }
+    .firstName,
+    .lastName {
+      display: inline; 
+    }
+  }
+
+  .subheading {
+    font-size: 2rem;
+    font-weight: 520;
+    margin-top: 0.2rem;
+    color: #2d2d2f;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #007bff;
+      color: white;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(3px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .heading {
+      .lastName {
+        display: block;
+        margin-top: 0.5rem; 
+      }
+    }
+
+    .subheading {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .subheading {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .heading {
+      font-size: 1.2rem;
+    }
+  }
+}

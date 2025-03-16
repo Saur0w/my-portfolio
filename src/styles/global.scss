@@ -1,0 +1,15 @@
+body {
+    margin: 0px;
+    cursor: wait;
+}
+
+body::-webkit-scrollbar {
+    display: none; 
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    cursor: wait; // Cursor change only when scrolling is disabled
+}
