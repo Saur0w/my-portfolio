@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./style.module.scss";
 
@@ -43,7 +43,7 @@ export default function Contact() {
       console.log("Response:", data);
       setSubmitStatus("Message sent successfully!");
 
-      // Clear the form after successful submission
+      
       setFormData({
         name: "",
         email: "",
@@ -58,11 +58,6 @@ export default function Contact() {
     }
   };
 
-
-
-
-
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -83,10 +78,7 @@ export default function Contact() {
     }
   };
 
-
-
   return (
-
     <motion.div
       className={styles.contactContainer}
       initial="hidden"
@@ -99,14 +91,13 @@ export default function Contact() {
       </motion.h1>
 
       <div className={styles.contactContent}>
-
         <motion.div
           className={styles.formContainer}
           variants={containerVariants}
         >
           <form onSubmit={handleSubmit} className={styles.contactForm}>
             <motion.div className={styles.formGroup} variants={itemVariants}>
-              <label>What's your name</label>
+              <label>What&apos;s your name</label>
               <input
                 type="text"
                 name="name"
@@ -163,12 +154,24 @@ export default function Contact() {
               variants={itemVariants}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
+              disabled={isSubmitting}
             >
-              <span>Send Message</span>
+              <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </motion.button>
+            
+            {submitStatus && (
+              <motion.div 
+                className={`${styles.statusMessage} ${submitStatus.includes("Failed") ? styles.errorMessage : styles.successMessage}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {submitStatus}
+              </motion.div>
+            )}
           </form>
         </motion.div>
 
